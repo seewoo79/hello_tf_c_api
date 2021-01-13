@@ -18,6 +18,7 @@ Example how to run TensorFlow lib C API on Windows, Linux and macOS(Darwin).
 * [Interface](src/interface.cpp)
 * [Tensor Info](src/tensor_info.cpp)
 * [Graph Info](src/graph_info.cpp)
+* [Image processing](https://github.com/Xonxt/hello_tf_c_api/blob/master/src/image_example.cpp)
 
 ## Build example
 
@@ -32,7 +33,7 @@ cmake -G "Visual Studio 15 2017" -A x64 ..
 cmake --build . --config Debug
 ```
 
-### Linux and macOS(Darwin)
+### Linux
 
 ```text
 git clone --depth 1 https://github.com/Neargye/hello_tf_c_api
@@ -40,6 +41,17 @@ cd hello_tf_c_api
 mkdir build
 cd build
 cmake -G "Unix Makefiles" ..
+cmake --build .
+```
+
+### macOS(Darwin)
+
+```text
+git clone --depth 1 https://github.com/Neargye/hello_tf_c_api
+cd hello_tf_c_api
+mkdir build
+cd build
+cmake -G "XCode" ..
 cmake --build .
 ```
 
@@ -51,7 +63,7 @@ cmake --build .
 
 ## Get tensorflow lib
 
-For x64 CPU, you can download the tensorflow.so, tensorflow.dll and tensorflow.lib from <https://github.com/Neargye/tensorflow/releases>.
+For x64 CPU, you can download the tensorflow.so, tensorflow.dll and tensorflow.lib from <https://github.com/neargye-forks/tensorflow/releases>.
 
 Or build lib which version you need from the sources, with CPU or GPU support.
 
@@ -76,5 +88,12 @@ Make sure that the tensorflow.dll is in Output Directory (by default, this is De
 To generated the graph.pb file need takes a graph definition and a set of checkpoints and freezes them together into a single file.
 
 ### [Here’s an example how create tensorflow.lib file from tensorflow.dll for windows](doc/create_lib_file_from_dll_for_windows.md)
+
+### __Few articles with details__
+
+* https://www.tensorflow.org/install/lang_c
+* https://medium.com/@vladislavsd/undocumented-tensorflow-c-api-b527c0b4ef6
+* https://medium.com/analytics-vidhya/deploying-tensorflow-2-1-as-c-c-executable-1d090845055c
+
 
 ## Licensed under the [MIT License](LICENSE)
